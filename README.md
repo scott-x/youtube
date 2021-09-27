@@ -1,16 +1,11 @@
 # youtube
-share youtube video
+
+Parse your youtube link to html string, which can be used for sharing.
 
 ### API
-- `func ShareFrameWithURL(height, width, url string) string`
+
+- `func GetConfig() *Video`
+- `func UpdateWidth(width int)`: update the width for the video, default width/height is 745/149.
+- `func ShareFrameWithURL(url string) string`: get the sharing html with just a youtube url
 - `func RetriveYoutubeURLSFromStr(str string) []string`
-
-
-### test
-
-```go
-func main() {
-	s := ShareWithURL("665", "375", "https://www.youtube.com/watch?v=m0xLvtLfwrQ")
-	fmt.Println(s)
-}
-```
+- `func ParseYTBUrlInRaw(raw string) string`: parse all youtube url in raw to frame
